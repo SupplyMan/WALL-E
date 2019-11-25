@@ -1,6 +1,7 @@
 #include "motor.h"
 #include "driver.h"
 #include "cmd_handler.h"
+#include "ping.h"
 
 class Scooper
 {
@@ -13,7 +14,10 @@ private:
 public:
 
 };
+
+
 	
+
 // interrupts can be used on the following pins: 2, 3, 18, 19, 20, 21
 
 // driver 1
@@ -52,6 +56,10 @@ const int G1_DIR_PIN = 36;
 const int G2_SPEED_PIN = 10;
 const int G2_DIR_PIN = 38;
 
+// ultrasonic sensor
+const int PING_TRIG_PIN = 40;
+const int PING_ECHO_PIN = 42;
+
 Motor front_left(M1_SPEED_PIN, M1_DIR_PIN);
 Motor front_right(M2_SPEED_PIN, M2_DIR_PIN);
 Motor back_left(M3_SPEED_PIN, M3_DIR_PIN);
@@ -64,7 +72,7 @@ Motor gearbox_right(G2_SPEED_PIN, G2_DIR_PIN);
 
 Driver driver(&front_left, &front_right, &back_left, &back_right);
 
-
+Ping ping_sensor(PING_TRIG_PIN, PING_ECHO_PIN);
 
 SerialCommandHandler sch;
 
@@ -97,6 +105,11 @@ void stop_func(char* tokens[], size_t token_count)
 	driver.stop();
 }
 
+void ping_func(char* tokens[], size_t token_count)
+{
+	Serial.println(ping_sensor.getCentimeters(), DEC);
+}
+
 void setup()
 {
 	//sch.registerCommand("test", &test_func);
@@ -104,16 +117,16 @@ void setup()
 	sch.registerCommand("rotate", &rotate_func);
 	sch.registerCommand("speed", &speed_func);
 	sch.registerCommand("stop", &stop_func);
+	sch.registerCommand("ping", &ping_func);
 
 	sch.init();
-
 	driver.init();
+	ping_sensor.init();
 }
 
-void loop()
+void loop() {}
+
+serialEvent()
 {
-	if (Serial.available())
-	{
-		sch.handleCommand();
-	}
+	sch.handleCommand()
 }
