@@ -14,16 +14,16 @@ void Motor::init()
 
 void Motor::setSpeed(uint8_t speed)
 {
-	analogWrite(this->speedPin, speed);
+	analogWrite(speedPin, speed);
 }
 
 void Motor::setDir(bool dir)
 {
-	digitalWrite(this->dirPin, dir);
+	digitalWrite(dirPin, dir);
 }
 
 void Motor::setMotor(uint8_t speed, bool dir)
 {
-	analogWrite(this->speedPin, speed);
-	digitalWrite(this->dirPin, dir);
+	analogWrite(speedPin, speed);
+	digitalWrite(dirPin, dir);
 }

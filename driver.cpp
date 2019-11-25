@@ -23,28 +23,28 @@ void Driver::drive(uint8_t speed, uint8_t dir)
 
 	switch (dir)
 	{
-		case Driver::DRIVE_FORWARD:
+		case DRIVE_FORWARD:
 			front_left_dir = true;
 			front_right_dir = true;
 			back_left_dir = true;
 			back_right_dir = true;
 			break;
 
-		case Driver::DRIVE_RIGHT:
+		case DRIVE_RIGHT:
 			front_left_dir = true;
 			front_right_dir = false;
 			back_left_dir = false;
 			back_right_dir = true;
 			break;
 
-		case Driver::DRIVE_BACKWARD:
+		case DRIVE_BACKWARD:
 			front_left_dir = false;
 			front_right_dir = false;
 			back_left_dir = false;
 			back_right_dir = false;
 			break;
 
-		case Driver::DRIVE_LEFT:
+		case DRIVE_LEFT:
 			front_left_dir = false;
 			front_right_dir = true;
 			back_left_dir = true;
@@ -93,5 +93,5 @@ void Driver::setSpeed(uint8_t speed)
 
 void Driver::stop()
 {
-	this->setSpeed(0);
+	setSpeed(0);
 }
