@@ -6,7 +6,7 @@ This repo contains the firmware for a robot designed to collect trash which we a
 
 ### Prerequisites
 
-The arduino IDE, and an appropriate board using an ATMEGA2560 microcontroller is required for compilation and use of this project. Follow the link below
+The arduino IDE, and an appropriate board using an ATMEGA2560 microcontroller are required for compilation and use of this project. Follow the link below:
 
 ```
 https://www.arduino.cc/en/main/software
