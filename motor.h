@@ -6,11 +6,11 @@
 class Motor 
 {
 private:
-	int speedPin;
-	int dirPin;
+	int speed_pin;
+	int dir_pin;
 
 public:
-	Motor(const int speedPin, const int dirPin);
+	Motor(const int speed_pin, const int dir_pin);
 
 	void init();
 	void setSpeed(uint8_t speed);
