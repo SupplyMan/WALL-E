@@ -1,5 +1,5 @@
-#ifndef DRIVER_H_
-#define DRIVER_H_
+#ifndef _DRIVER_H
+#define _DRIVER_H
 
 #include <Arduino.h>
 

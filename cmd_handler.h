@@ -1,5 +1,5 @@
-#ifndef CMD_HANDLER_H_
-#define CMD_HANDLER_H_
+#ifndef _CMD_HANDLER_H
+#define _CMD_HANDLER_H
 
 #include <Arduino.h>
 

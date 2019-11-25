@@ -31,7 +31,7 @@ void SerialCommandHandler::init()
 void SerialCommandHandler::readCommand()
 {
 	size_t size = Serial.readBytesUntil('\n', serial_buffer, SERIAL_BUFFER_SIZE);
-	serial_buffer[size] = 0;
+	serial_buffer[size] = '\0';
 
 	size_t count = 0;
 	char* temp = strtok(serial_buffer, " ");
