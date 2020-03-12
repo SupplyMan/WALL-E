@@ -18,15 +18,15 @@ int32_t Ping::ping()
 	delayMicroseconds(10);
 	digitalWrite(trig_pin, LOW);
 
-	return pulseIn(echo_pin);
+	return pulseIn(echo_pin, HIGH);
 }
 
 int Ping::getCentimeters()
 {
-	return getDuration() * 0.034 / 2;
+	return ping() * 0.034 / 2;
 }
 
 int Ping::getInches()
 {
-	return getDuration() * 0.0133 / 2;
+	return ping() * 0.0133 / 2;
 }

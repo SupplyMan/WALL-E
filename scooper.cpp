@@ -84,6 +84,6 @@ void Scooper::init()
 
 void Scooper::calibrate()
 {
-	arms_up();
+	arms_up(26000);
 	//scoop_close();
 }

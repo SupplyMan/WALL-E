@@ -19,9 +19,8 @@ private:
 	size_t token_count;
 
 	char* cmd_ids[SERIAL_MAX_CMD];
-	size_t cmd_count;
-
 	CMDFunc cmd_funcs[SERIAL_MAX_CMD];
+	size_t cmd_count;
 
 	void readCommand();
 
