@@ -26,10 +26,11 @@ Movement
 Arm Control
 
 	scoop (expected response = scooped)
+	scoop_calibrate (expected response = calibrated)
 
 Sensors
 
-	ping (expected response = distance in cm)
+	ping [sensor (0 = center, 1 = left, 2 = right)]	(expected response = distance in cm)
 ```
 
 All commands should be ended with a newline.
